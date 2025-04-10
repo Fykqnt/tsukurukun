@@ -108,33 +108,6 @@ export function AddFriendSection() {
                 }}
               />
             </Card>
-
-            {/* 装飾要素 */}
-            <motion.div
-              className="absolute -z-10 rounded-full bg-green-100 w-32 h-32 -top-10 -left-10"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.5, 0.8, 0.5],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "loop",
-              }}
-            />
-            <motion.div
-              className="absolute -z-10 rounded-full bg-green-200 w-24 h-24 -bottom-8 -right-8"
-              animate={{
-                scale: [1, 1.3, 1],
-                opacity: [0.5, 0.7, 0.5],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "loop",
-                delay: 1,
-              }}
-            />
           </motion.div>
 
           <motion.div
@@ -169,7 +142,7 @@ export function AddFriendSection() {
                   <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-500 to-green-400 text-white mr-2">
                     2
                   </span>
-                  ホームページ作成の無料アドバイス
+                  今だけのお得な限定価格
                 </motion.li>
                 <motion.li
                   className="flex items-center justify-center md:justify-start"
@@ -181,7 +154,7 @@ export function AddFriendSection() {
                   <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-500 to-green-400 text-white mr-2">
                     3
                   </span>
-                  今だけのお得な限定価格
+                  ホームページつくるくんによる人生相談
                 </motion.li>
               </ul>
               <motion.div

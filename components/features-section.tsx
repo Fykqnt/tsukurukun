@@ -8,12 +8,12 @@ export function FeaturesSection() {
     {
       icon: <Zap className="h-10 w-10 text-green-500" />,
       title: "最短即日納品",
-      description: "急ぎのホームページ制作にも対応。LINEでのやり取りで素早く完成します。",
+      description: "業界最速で、急ぎのホームページ制作にも対応。LINEでのやり取りで素早く完成します。",
     },
     {
       icon: <Smartphone className="h-10 w-10 text-green-500" />,
       title: "スマホ対応デザイン",
-      description: "すべてのデバイスで美しく表示されるレスポンシブデザインを採用しています。",
+      description: "あらゆるデバイスで美しく表示されるレスポンシブデザインを採用しています。",
     },
     {
       icon: <Search className="h-10 w-10 text-green-500" />,
@@ -23,7 +23,7 @@ export function FeaturesSection() {
     {
       icon: <PaintBucket className="h-10 w-10 text-green-500" />,
       title: "豊富なデザイン",
-      description: "お客様の業種やイメージに合わせた多彩なデザインテンプレートをご用意。",
+      description: "お客様の業種やイメージに合わせた多彩な、洗練されたデザインをご用意。",
     },
     {
       icon: <CreditCard className="h-10 w-10 text-green-500" />,
@@ -33,7 +33,7 @@ export function FeaturesSection() {
     {
       icon: <Globe className="h-10 w-10 text-green-500" />,
       title: "ドメイン・サーバー設定",
-      description: "面倒なドメイン取得やサーバー設定もサポート。初心者でも安心です。",
+      description: "面倒なドメイン取得やサーバー設定もまるごと対応。一気通貫なサポートにより初心者でも安心です。",
     },
   ]
 

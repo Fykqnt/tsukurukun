@@ -104,65 +104,303 @@ export function HeroSection() {
   }
 
   return (
-    <section className="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-green-50 via-green-100 to-white relative overflow-hidden">
-      {/* 背景アニメーション - より洗練された要素 */}
-      <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 30 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-gradient-to-r from-green-200 to-green-300 opacity-20"
-            style={{
-              width: Math.random() * 150 + 50,
-              height: Math.random() * 150 + 50,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              filter: "blur(8px)",
-            }}
-            animate={{
-              y: [0, Math.random() * 150 - 75],
-              x: [0, Math.random() * 150 - 75],
-              scale: [1, Math.random() + 0.5, 1],
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              duration: Math.random() * 20 + 15,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-            }}
-          />
-        ))}
+    <section className="w-full min-h-[95vh] flex flex-col items-center justify-center bg-gradient-to-b from-green-50 via-green-100 to-white relative pb-12 overflow-hidden">
+      {/* Lava lamp bubbles with improved animation */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Large bubbles with lava lamp movement */}
+        <motion.div
+          className="absolute rounded-full bg-green-300 opacity-30"
+          style={{ top: '10%', left: '15%', width: '140px', height: '140px', filter: 'blur(12px)' }}
+          animate={{
+            y: [0, 50, 120, 70, 0],
+            x: [0, 30, 10, -20, 0],
+            scale: [1, 1.1, 1.05, 1.2, 1],
+          }}
+          transition={{ 
+            duration: 25, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.25, 0.5, 0.75, 1]
+          }}
+        />
+        
+        <motion.div
+          className="absolute rounded-full bg-green-300 opacity-25"
+          style={{ top: '30%', left: '75%', width: '120px', height: '120px', filter: 'blur(10px)' }}
+          animate={{
+            y: [0, -40, -90, -30, 0],
+            x: [0, -20, -40, -10, 0],
+            scale: [1, 1.15, 1, 1.1, 1],
+          }}
+          transition={{ 
+            duration: 28, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.3, 0.6, 0.8, 1]
+          }}
+        />
+        
+        <motion.div
+          className="absolute rounded-full bg-green-400 opacity-20"
+          style={{ top: '65%', left: '20%', width: '160px', height: '160px', filter: 'blur(15px)' }}
+          animate={{
+            y: [0, -60, -30, -80, 0],
+            x: [0, 40, 80, 30, 0],
+            scale: [1, 1.05, 1.2, 1.1, 1],
+          }}
+          transition={{ 
+            duration: 30, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.2, 0.5, 0.8, 1]
+          }}
+        />
+        
+        <motion.div
+          className="absolute rounded-full bg-green-300 opacity-25"
+          style={{ top: '70%', left: '75%', width: '130px', height: '130px', filter: 'blur(12px)' }}
+          animate={{
+            y: [0, -30, -70, -20, 0],
+            x: [0, -30, -10, -50, 0],
+            scale: [1, 1.1, 1.15, 1.05, 1],
+          }}
+          transition={{ 
+            duration: 22, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.25, 0.5, 0.75, 1]
+          }}
+        />
+        
+        <motion.div
+          className="absolute rounded-full bg-green-300 opacity-20"
+          style={{ top: '15%', left: '60%', width: '100px', height: '100px', filter: 'blur(10px)' }}
+          animate={{
+            y: [0, 40, 80, 20, 0],
+            x: [0, -20, -50, -10, 0],
+            scale: [1, 1.15, 1.2, 1.1, 1],
+          }}
+          transition={{ 
+            duration: 20, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.3, 0.5, 0.8, 1]
+          }}
+        />
+        
+        <motion.div
+          className="absolute rounded-full bg-green-400 opacity-20"
+          style={{ top: '40%', left: '10%', width: '90px', height: '90px', filter: 'blur(8px)' }}
+          animate={{
+            y: [0, 50, 30, 70, 0],
+            x: [0, 30, 60, 20, 0],
+            scale: [1, 1.2, 1.1, 1.15, 1],
+          }}
+          transition={{ 
+            duration: 18, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.2, 0.6, 0.8, 1]
+          }}
+        />
+        
+        <motion.div
+          className="absolute rounded-full bg-green-300 opacity-30"
+          style={{ top: '45%', left: '40%', width: '180px', height: '180px', filter: 'blur(15px)' }}
+          animate={{
+            y: [0, -40, -20, -60, 0],
+            x: [0, 20, 50, 10, 0],
+            scale: [1, 1.05, 1.1, 1.02, 1],
+          }}
+          transition={{ 
+            duration: 32, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.3, 0.5, 0.7, 1]
+          }}
+        />
+        
+        <motion.div
+          className="absolute rounded-full bg-green-200 opacity-25"
+          style={{ top: '55%', left: '55%', width: '150px', height: '150px', filter: 'blur(12px)' }}
+          animate={{
+            y: [0, 30, 60, 20, 0],
+            x: [0, -20, -40, -10, 0],
+            scale: [1, 1.1, 1.05, 1.15, 1],
+          }}
+          transition={{ 
+            duration: 26, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.2, 0.5, 0.8, 1]
+          }}
+        />
+        
+        <motion.div
+          className="absolute rounded-full bg-green-400 opacity-15"
+          style={{ top: '75%', left: '45%', width: '110px', height: '110px', filter: 'blur(10px)' }}
+          animate={{
+            y: [0, -50, -20, -60, 0],
+            x: [0, 10, 30, 5, 0],
+            scale: [1, 1.15, 1.05, 1.1, 1],
+          }}
+          transition={{ 
+            duration: 24, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.25, 0.5, 0.75, 1]
+          }}
+        />
+        
+        <motion.div
+          className="absolute rounded-full bg-green-300 opacity-20"
+          style={{ top: '25%', left: '35%', width: '120px', height: '120px', filter: 'blur(10px)' }}
+          animate={{
+            y: [0, 40, 20, 60, 0],
+            x: [0, 30, 50, 15, 0],
+            scale: [1, 1.1, 1.15, 1.05, 1],
+          }}
+          transition={{ 
+            duration: 27, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.3, 0.6, 0.9, 1]
+          }}
+        />
+        
+        {/* Medium sized bubbles with improved lava lamp flow */}
+        <motion.div
+          className="absolute rounded-full bg-green-200 opacity-25"
+          style={{ top: '20%', left: '85%', width: '80px', height: '80px', filter: 'blur(8px)' }}
+          animate={{
+            y: [0, 60, 40, 70, 0],
+            x: [0, -30, -50, -15, 0],
+            scale: [1, 1.2, 1.15, 1.1, 1],
+          }}
+          transition={{ 
+            duration: 19, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.2, 0.5, 0.8, 1]
+          }}
+        />
+        
+        <motion.div
+          className="absolute rounded-full bg-green-400 opacity-20"
+          style={{ top: '85%', left: '15%', width: '70px', height: '70px', filter: 'blur(7px)' }}
+          animate={{
+            y: [0, -40, -20, -50, 0],
+            x: [0, 20, 40, 10, 0],
+            scale: [1, 1.15, 1.1, 1.2, 1],
+          }}
+          transition={{ 
+            duration: 17, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.3, 0.6, 0.8, 1]
+          }}
+        />
+        
+        <motion.div
+          className="absolute rounded-full bg-green-300 opacity-25"
+          style={{ top: '5%', left: '45%', width: '65px', height: '65px', filter: 'blur(6px)' }}
+          animate={{
+            y: [0, 30, 60, 20, 0],
+            x: [0, 40, 20, 50, 0],
+            scale: [1, 1.25, 1.1, 1.2, 1],
+          }}
+          transition={{ 
+            duration: 16, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.25, 0.5, 0.75, 1]
+          }}
+        />
+        
+        <motion.div
+          className="absolute rounded-full bg-green-300 opacity-20"
+          style={{ top: '60%', left: '85%', width: '75px', height: '75px', filter: 'blur(7px)' }}
+          animate={{
+            y: [0, -35, -70, -20, 0],
+            x: [0, -25, -10, -40, 0],
+            scale: [1, 1.1, 1.2, 1.05, 1],
+          }}
+          transition={{ 
+            duration: 18, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.2, 0.6, 0.8, 1]
+          }}
+        />
+        
+        <motion.div
+          className="absolute rounded-full bg-green-400 opacity-15"
+          style={{ top: '40%', left: '75%', width: '60px', height: '60px', filter: 'blur(6px)' }}
+          animate={{
+            y: [0, 45, 20, 55, 0],
+            x: [0, -15, -30, -10, 0],
+            scale: [1, 1.2, 1.1, 1.15, 1],
+          }}
+          transition={{ 
+            duration: 15, 
+            repeat: Infinity, 
+            repeatType: "loop", 
+            ease: "easeInOut",
+            times: [0, 0.3, 0.5, 0.7, 1]
+          }}
+        />
       </div>
-
-      {/* 装飾的な要素 - 幾何学模様 */}
+      
+      {/* Static geometric decorations that won't move or overflow */}
       <div className="absolute top-20 left-10 w-32 h-32 border-4 border-green-200 rounded-full opacity-20 hidden md:block" />
-      <div className="absolute bottom-20 right-10 w-48 h-48 border-4 border-green-200 rounded-full opacity-20 hidden md:block" />
+      <div className="absolute bottom-40 right-10 w-48 h-48 border-4 border-green-200 rounded-full opacity-20 hidden md:block" />
       <div className="absolute top-40 right-20 w-24 h-24 border-4 border-green-300 rounded-full opacity-20 hidden md:block" />
-      <div className="absolute bottom-40 left-20 w-16 h-16 border-4 border-green-300 rounded-full opacity-20 hidden md:block" />
+      <div className="absolute bottom-80 left-20 w-16 h-16 border-4 border-green-300 rounded-full opacity-20 hidden md:block" />
 
-      <div className="container px-4 py-16 relative z-10">
+      {/* Hard boundary at bottom to prevent any leakage */}
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-white" style={{ zIndex: 5 }}></div>
+
+      {/* Main content container */}
+      <div className="container px-4 py-12 relative z-10">
         <div className="flex flex-col items-center text-center">
+          {/* Title section */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-8"
+            className="mb-6" // Reduced from mb-8
           >
             <h1 className="text-5xl md:text-7xl font-black text-black mb-4 drop-shadow-sm font-sans">
               ホームページつくるくん
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto">
-              【最短即日】LINEで完結するホームページ作成サービス
+              【業界最速】LINEで完結するホームページ作成サービス
             </p>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              初心者でも安心！チャットするだけで高品質なウェブサイトが完成
+              初心者でも安心！チャットするだけで高品質なウェブサイトが最短即日完成
             </p>
           </motion.div>
 
+          {/* Character animation with reduced bottom margin */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="relative w-72 h-72 md:w-96 md:h-96 mb-8"
+            className="relative w-72 h-72 md:w-96 md:h-96 mb-6" // Increased from mb-2 to mb-6 for more space
           >
             <motion.div
               animate={expression !== "normal" ? getExpressionAnimation() : controls}
@@ -321,15 +559,16 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
 
+          {/* Button with adjusted margin */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="relative"
+            className="mt-4 mb-8 relative z-50" // Added margin-top and margin-bottom
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-600 hover:to-green-500 text-white rounded-full px-8 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-600 hover:to-green-500 text-white rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               onClick={() => {
                 const addFriendSection = document.getElementById("add-friend-section")
                 if (addFriendSection) {
@@ -337,41 +576,20 @@ export function HeroSection() {
                 }
               }}
             >
-              友だち追加する <ArrowDownIcon className="ml-2 h-5 w-5" />
+              LINEで友だち追加する <ArrowDownIcon className="ml-2 h-5 w-5" />
             </Button>
-
-            {/* ボタン下の装飾 */}
-            <motion.div
-              className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-green-300 to-transparent rounded-full"
-              animate={{
-                opacity: [0.3, 0.7, 0.3],
-                width: ["60%", "80%", "60%"],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "reverse",
-              }}
-            />
           </motion.div>
-          {/* SEO向上のための追加コンテンツ */}
+          
+          {/* SEO content */}
           <div className="hidden">
             <h2>格安ホームページ制作 スマホ対応 レスポンシブデザイン SEO対策 WordPress ランディングページ 集客</h2>
           </div>
         </div>
       </div>
 
-      {/* 波形のデザイン - より洗練されたバージョン */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg className="w-full h-24 md:h-32 fill-white" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path
-            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-            opacity=".25"
-          />
-          <path
-            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
-            opacity=".5"
-          />
+      {/* Decorative wave at bottom with higher z-index to ensure bubble separation */}
+      <div className="absolute bottom-0 left-0 right-0 z-10">
+        <svg className="w-full h-16 md:h-24 fill-white" viewBox="0 0 1200 120" preserveAspectRatio="none">
           <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" />
         </svg>
       </div>
