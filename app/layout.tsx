@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Noto_Sans_JP } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Header } from "@/components/header"
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -48,6 +49,7 @@ export default function RootLayout({
       </head>
       <body className={`${notoSansJP.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <Header />
           {children}
         </ThemeProvider>
       </body>
