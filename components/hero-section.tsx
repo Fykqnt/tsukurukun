@@ -483,16 +483,16 @@ export function HeroSection() {
             </p>
           </motion.div>
 
-          {/* Main character container */}
+          {/* Main character container - centered for mobile */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="relative w-72 h-72 md:w-96 md:h-96 mb-6"
+            className="relative w-72 h-72 md:w-96 md:h-96 mb-6 flex justify-center items-center"
           >
-            {/* "Saisoku" image - adjusted for mobile */}
+            {/* "Saisoku" image - positioned at upper left for mobile */}
             <motion.div 
-              className="absolute left-[-40px] top-[50%] transform -translate-y-1/2 md:left-[-290px] md:top-[-30px] md:transform-none z-10"
+              className="absolute left-0 top-0 md:left-[-290px] md:top-[-30px] z-10"
               initial={{ opacity: 0, scale: 0 }}
               animate={saisokuControls}
             >
@@ -512,9 +512,9 @@ export function HeroSection() {
               />
             </motion.div>
             
-            {/* "Kanketsu" image - adjusted for mobile */}
+            {/* "Kanketsu" image - positioned at upper right for mobile */}
             <motion.div 
-              className="absolute right-[-40px] top-[50%] transform -translate-y-1/2 md:right-[-250px] md:top-[-40px] md:transform-none z-10"
+              className="absolute right-0 top-0 md:right-[-250px] md:top-[-40px] z-10"
               initial={{ opacity: 0, scale: 0 }}
               animate={kanketsuControls}
             >
@@ -555,19 +555,19 @@ export function HeroSection() {
                 }
               }}
               onClick={handleClick}
-              className="relative cursor-pointer flex justify-center items-center h-full"
+              className="relative cursor-pointer"
             >
               {/* Normal expression */}
               <div
-                className={`absolute inset-0 transition-opacity duration-0 ${
+                className={`transition-opacity duration-0 ${
                   expression === "normal" && !isMaccho ? "opacity-100" : "opacity-0"
                 }`}
               >
                 <Image
                   src="/images/tsukurukun-transparent.png"
                   alt="ホームページつくるくん"
-                  width={200} // Reduced to 50% for mobile
-                  height={200} // Reduced to 50% for mobile
+                  width={200}
+                  height={200}
                   className="object-contain md:w-[400px] md:h-[400px]"
                   priority
                 />
@@ -582,8 +582,8 @@ export function HeroSection() {
                 <Image
                   src="/images/tsukurukun_maccho.png"
                   alt="マッチョなホームページつくるくん"
-                  width={200} // Reduced to 50% for mobile
-                  height={200} // Reduced to 50% for mobile
+                  width={200}
+                  height={200}
                   className="object-contain md:w-[400px] md:h-[400px]"
                   priority
                 />
@@ -715,7 +715,7 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="mt-4 mb-8 relative z-50" // Added margin-top and margin-bottom
+            className="mt-4 mb-8 relative z-50"
           >
             <Button
               size="lg"
