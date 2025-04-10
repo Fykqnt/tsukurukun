@@ -441,10 +441,15 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-6" // Reduced from mb-8
+            className="mb-6"
           >
             <h1 className="text-5xl md:text-7xl font-black text-black mb-4 drop-shadow-sm font-sans">
-              ホームページつくるくん
+              <span className="md:hidden">
+                ホームページ<br />つくるくん
+              </span>
+              <span className="hidden md:inline">
+                ホームページつくるくん
+              </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto">
               【業界最速】LINEで完結するホームページ作成サービス
@@ -463,31 +468,45 @@ export function HeroSection() {
           >
             {/* "Saisoku" image on the left */}
             <motion.div 
-              className="absolute left-[-230px] top-[-20px] md:left-[-290px] md:top-[-30px] z-10"
+              className="absolute left-[-115px] top-[-10px] md:left-[-290px] md:top-[-30px] z-10"
               initial={{ opacity: 0, scale: 0 }}
               animate={saisokuControls}
             >
               <Image
                 src="/images/saisoku.png"
                 alt="最速"
+                width={150}
+                height={150}
+                className="object-contain md:hidden"
+              />
+              <Image
+                src="/images/saisoku.png"
+                alt="最速"
                 width={300}
                 height={300}
-                className="object-contain"
+                className="object-contain hidden md:block"
               />
             </motion.div>
             
             {/* "Kanketsu" image on the right */}
             <motion.div 
-              className="absolute right-[-190px] top-[-42px] md:right-[-250px] md:top-[-52px] z-10"
+              className="absolute right-[-95px] top-[-21px] md:right-[-250px] md:top-[-52px] z-10"
               initial={{ opacity: 0, scale: 0 }}
               animate={kanketsuControls}
             >
               <Image
                 src="/images/kanketsu.png"
                 alt="完結"
+                width={150}
+                height={150}
+                className="object-contain md:hidden"
+              />
+              <Image
+                src="/images/kanketsu.png"
+                alt="完結"
                 width={300}
                 height={300}
-                className="object-contain"
+                className="object-contain hidden md:block"
               />
             </motion.div>
             
