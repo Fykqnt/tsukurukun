@@ -154,7 +154,7 @@ export function AddFriendSection() {
                   <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-500 to-green-400 text-white mr-2">
                     3
                   </span>
-                  ホームページつくるくんによる人生相談
+                  つくるくんによる人生相談
                 </motion.li>
               </ul>
               <motion.div
