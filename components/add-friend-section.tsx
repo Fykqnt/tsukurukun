@@ -69,7 +69,7 @@ export function AddFriendSection() {
             LINE公式アカウントを友だち追加
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            最新情報やお得な情報をLINEでお届けします。QRコードを読み取って友だち追加してください。
+            QRコードを読み取って友だち追加いただくことで早速ご利用いただけます。
           </p>
         </motion.div>
 

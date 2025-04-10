@@ -13,8 +13,10 @@ export function HeroSection() {
   const [isHovering, setIsHovering] = useState(false)
   const [hoverCount, setHoverCount] = useState(0)
   const [expression, setExpression] = useState<TsukurukunExpression>("normal")
+  const [isMaccho, setIsMaccho] = useState(false)
   const controls = useAnimation()
   const hoverTimerRef = useRef<NodeJS.Timeout | null>(null)
+  const hoverStartTimeRef = useRef<number | null>(null)
   
   // New animation controls for the saisoku and kanketsu images
   const saisokuControls = useAnimation()
@@ -161,6 +163,28 @@ export function HeroSection() {
     
     animateSideImages();
   }, [saisokuControls, kanketsuControls]);
+
+  // Add hover timer logic
+  useEffect(() => {
+    if (isHovering) {
+      hoverStartTimeRef.current = Date.now()
+    } else {
+      hoverStartTimeRef.current = null
+      setIsMaccho(false)
+    }
+
+    const checkHoverDuration = () => {
+      if (hoverStartTimeRef.current && Date.now() - hoverStartTimeRef.current >= 10000) {
+        setIsMaccho(true)
+      }
+    }
+
+    const intervalId = setInterval(checkHoverDuration, 1000)
+
+    return () => {
+      clearInterval(intervalId)
+    }
+  }, [isHovering])
 
   return (
     <section className="w-full min-h-[95vh] flex flex-col items-center justify-center bg-gradient-to-b from-green-50 via-green-100 to-white relative pb-12 overflow-hidden">
@@ -466,17 +490,17 @@ export function HeroSection() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="relative w-72 h-72 md:w-96 md:h-96 mb-6"
           >
-            {/* "Saisoku" image on the left */}
+            {/* "Saisoku" image - adjusted for mobile */}
             <motion.div 
-              className="absolute left-[-115px] top-[-10px] md:left-[-290px] md:top-[-30px] z-10"
+              className="absolute left-[-95px] right-[20px] top-[-10px] md:left-[-290px] md:right-auto md:top-[-30px] z-10"
               initial={{ opacity: 0, scale: 0 }}
               animate={saisokuControls}
             >
               <Image
                 src="/images/saisoku.png"
                 alt="最速"
-                width={150}
-                height={150}
+                width={75} // Reduced to 50% for mobile
+                height={75} // Reduced to 50% for mobile
                 className="object-contain md:hidden"
               />
               <Image
@@ -488,17 +512,17 @@ export function HeroSection() {
               />
             </motion.div>
             
-            {/* "Kanketsu" image on the right */}
+            {/* "Kanketsu" image - adjusted for mobile and desktop */}
             <motion.div 
-              className="absolute right-[-95px] top-[-21px] md:right-[-250px] md:top-[-52px] z-10"
+              className="absolute right-[-75px] left-[20px] top-[-21px] md:right-[-250px] md:left-auto md:top-[-40px] z-10"
               initial={{ opacity: 0, scale: 0 }}
               animate={kanketsuControls}
             >
               <Image
                 src="/images/kanketsu.png"
                 alt="完結"
-                width={150}
-                height={150}
+                width={75} // Reduced to 50% for mobile
+                height={75} // Reduced to 50% for mobile
                 className="object-contain md:hidden"
               />
               <Image
@@ -510,7 +534,7 @@ export function HeroSection() {
               />
             </motion.div>
             
-            {/* Tsukurukun character (existing code) */}
+            {/* Tsukurukun character */}
             <motion.div
               animate={expression !== "normal" ? getExpressionAnimation() : controls}
               transition={{
@@ -533,16 +557,34 @@ export function HeroSection() {
               onClick={handleClick}
               className="relative cursor-pointer"
             >
-              {/* 通常の表情 */}
+              {/* Normal expression */}
               <div
-                className={`absolute inset-0 transition-opacity duration-0 ${expression === "normal" ? "opacity-100" : "opacity-0"}`}
+                className={`absolute inset-0 transition-opacity duration-0 ${
+                  expression === "normal" && !isMaccho ? "opacity-100" : "opacity-0"
+                }`}
               >
                 <Image
                   src="/images/tsukurukun-transparent.png"
                   alt="ホームページつくるくん"
-                  width={400}
-                  height={400}
-                  className="object-contain"
+                  width={200} // Reduced to 50% for mobile
+                  height={200} // Reduced to 50% for mobile
+                  className="object-contain md:w-[400px] md:h-[400px]"
+                  priority
+                />
+              </div>
+
+              {/* Maccho expression */}
+              <div
+                className={`absolute inset-0 transition-opacity duration-300 ${
+                  expression === "normal" && isMaccho ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <Image
+                  src="/images/tsukurukun_maccho.png"
+                  alt="マッチョなホームページつくるくん"
+                  width={200} // Reduced to 50% for mobile
+                  height={200} // Reduced to 50% for mobile
+                  className="object-contain md:w-[400px] md:h-[400px]"
                   priority
                 />
               </div>
