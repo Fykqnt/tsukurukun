@@ -60,6 +60,15 @@ export function Footer() {
                   お問い合わせ
                 </Link>
               </motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}>
+                <Link
+                  href="/transactionlaw"
+                  className="text-gray-600 hover:text-green-600 hover:underline flex items-center"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block mr-2"></span>
+                  特定商取引法に基づく表記
+                </Link>
+              </motion.li>
             </ul>
           </motion.div>
         </div>

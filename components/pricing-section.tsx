@@ -335,9 +335,6 @@ export const PricingSection = () => {
               <p className="text-3xl font-bold">¥24,800<span className="text-base">/年</span></p>
               <p className="text-green-600 font-semibold">約30%おトク</p>
             </div>
-            <button className="w-full py-3 px-6 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
-              プランを選択
-            </button>
           </div>
 
           {/* Standard Plan */}
@@ -359,13 +356,13 @@ export const PricingSection = () => {
               <p className="text-3xl font-bold">¥58,000<span className="text-base">/年</span></p>
               <p className="text-green-600 font-semibold">約50%おトク</p>
             </div>
-            <button className="w-full py-3 px-6 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
-              プランを選択
-            </button>
           </div>
 
           {/* Premium Plan */}
-          <div className="rounded-2xl bg-gradient-to-br from-green-600 to-green-400 p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 text-white">
+          <div className="rounded-2xl bg-gradient-to-br from-green-600 to-green-400 p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 text-white relative">
+            <div className="absolute top-0 right-0 bg-yellow-400 text-green-800 px-4 py-1 rounded-bl-lg rounded-tr-lg font-bold">
+              オススメ
+            </div>
             <h3 className="text-2xl font-bold mb-4">プレミアム</h3>
             <div className="mb-6">
               <p className="text-gray-200">初期費用</p>
@@ -380,9 +377,6 @@ export const PricingSection = () => {
               <p className="text-3xl font-bold">¥98,000<span className="text-base">/年</span></p>
               <p className="text-green-300 font-semibold">約60%おトク</p>
             </div>
-            <button className="w-full py-3 px-6 bg-white text-green-600 rounded-lg hover:bg-gray-100 transition-colors">
-              プランを選択
-            </button>
           </div>
         </div>
 
