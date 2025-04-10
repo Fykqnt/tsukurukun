@@ -483,7 +483,7 @@ export function HeroSection() {
             </p>
           </motion.div>
 
-          {/* Character animation with "saisoku" and "kanketsu" images */}
+          {/* Main character container */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -492,15 +492,15 @@ export function HeroSection() {
           >
             {/* "Saisoku" image - adjusted for mobile */}
             <motion.div 
-              className="absolute left-[-95px] right-[20px] top-[-10px] md:left-[-290px] md:right-auto md:top-[-30px] z-10"
+              className="absolute left-[-40px] top-[50%] transform -translate-y-1/2 md:left-[-290px] md:top-[-30px] md:transform-none z-10"
               initial={{ opacity: 0, scale: 0 }}
               animate={saisokuControls}
             >
               <Image
                 src="/images/saisoku.png"
                 alt="最速"
-                width={75} // Reduced to 50% for mobile
-                height={75} // Reduced to 50% for mobile
+                width={75}
+                height={75}
                 className="object-contain md:hidden"
               />
               <Image
@@ -512,17 +512,17 @@ export function HeroSection() {
               />
             </motion.div>
             
-            {/* "Kanketsu" image - adjusted for mobile and desktop */}
+            {/* "Kanketsu" image - adjusted for mobile */}
             <motion.div 
-              className="absolute right-[-75px] left-[20px] top-[-21px] md:right-[-250px] md:left-auto md:top-[-40px] z-10"
+              className="absolute right-[-40px] top-[50%] transform -translate-y-1/2 md:right-[-250px] md:top-[-40px] md:transform-none z-10"
               initial={{ opacity: 0, scale: 0 }}
               animate={kanketsuControls}
             >
               <Image
                 src="/images/kanketsu.png"
                 alt="完結"
-                width={75} // Reduced to 50% for mobile
-                height={75} // Reduced to 50% for mobile
+                width={75}
+                height={75}
                 className="object-contain md:hidden"
               />
               <Image
@@ -534,7 +534,7 @@ export function HeroSection() {
               />
             </motion.div>
             
-            {/* Tsukurukun character */}
+            {/* Tsukurukun character - centered */}
             <motion.div
               animate={expression !== "normal" ? getExpressionAnimation() : controls}
               transition={{
@@ -555,7 +555,7 @@ export function HeroSection() {
                 }
               }}
               onClick={handleClick}
-              className="relative cursor-pointer"
+              className="relative cursor-pointer flex justify-center items-center h-full"
             >
               {/* Normal expression */}
               <div
