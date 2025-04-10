@@ -15,6 +15,10 @@ export function HeroSection() {
   const [expression, setExpression] = useState<TsukurukunExpression>("normal")
   const controls = useAnimation()
   const hoverTimerRef = useRef<NodeJS.Timeout | null>(null)
+  
+  // New animation controls for the saisoku and kanketsu images
+  const saisokuControls = useAnimation()
+  const kanketsuControls = useAnimation()
 
   // ホバー時の不規則なアニメーションを生成
   const generateRandomAnimation = () => {
@@ -102,6 +106,61 @@ export function HeroSection() {
         }
     }
   }
+
+  // Add a new useEffect for animating the saisoku and kanketsu images
+  useEffect(() => {
+    // Initial animation when the component mounts
+    const animateSideImages = async () => {
+      // Make sure images start invisible
+      await saisokuControls.start({ opacity: 0, scale: 0 });
+      await kanketsuControls.start({ opacity: 0, scale: 0 });
+      
+      // Delay before starting animations
+      await new Promise(resolve => setTimeout(resolve, 2000)); // 2 second delay
+      
+      // Sequence for saisoku image (left side)
+      await saisokuControls.start({
+        opacity: 1,
+        scale: [0, 1.2, 0.9, 1.1, 1],
+        rotate: [-10, 5, -3, 2, 0],
+        transition: { duration:0.7, ease: "easeOut" }
+      });
+      
+      // Start a continuous subtle animation
+      saisokuControls.start({
+        scale: [1, 1.05, 1, 1.05, 1],
+        rotate: [0, 2, 0, -2, 0],
+        transition: { 
+          duration: 5, 
+          repeat: Infinity, 
+          repeatType: "loop",
+          ease: "easeInOut" 
+        }
+      });
+      
+      // Sequence for kanketsu image (right side)
+      await kanketsuControls.start({
+        opacity: 1,
+        scale: [0, 1.2, 0.9, 1.1, 1],
+        rotate: [10, -5, 3, -2, 0],
+        transition: { duration: 0.7, ease: "easeOut", delay: 0.3 }
+      });
+      
+      // Start a continuous subtle animation (slightly different timing)
+      kanketsuControls.start({
+        scale: [1, 1.05, 1, 1.05, 1],
+        rotate: [0, -2, 0, 2, 0],
+        transition: { 
+          duration: 2.5, 
+          repeat: Infinity, 
+          repeatType: "loop",
+          ease: "easeInOut" 
+        }
+      });
+    };
+    
+    animateSideImages();
+  }, [saisokuControls, kanketsuControls]);
 
   return (
     <section className="w-full min-h-[95vh] flex flex-col items-center justify-center bg-gradient-to-b from-green-50 via-green-100 to-white relative pb-12 overflow-hidden">
@@ -395,13 +454,44 @@ export function HeroSection() {
             </p>
           </motion.div>
 
-          {/* Character animation with reduced bottom margin */}
+          {/* Character animation with "saisoku" and "kanketsu" images */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="relative w-72 h-72 md:w-96 md:h-96 mb-6" // Increased from mb-2 to mb-6 for more space
+            className="relative w-72 h-72 md:w-96 md:h-96 mb-6"
           >
+            {/* "Saisoku" image on the left */}
+            <motion.div 
+              className="absolute left-[-230px] top-[-20px] md:left-[-290px] md:top-[-30px] z-10"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={saisokuControls}
+            >
+              <Image
+                src="/images/saisoku.png"
+                alt="最速"
+                width={300}
+                height={300}
+                className="object-contain"
+              />
+            </motion.div>
+            
+            {/* "Kanketsu" image on the right */}
+            <motion.div 
+              className="absolute right-[-190px] top-[-42px] md:right-[-250px] md:top-[-52px] z-10"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={kanketsuControls}
+            >
+              <Image
+                src="/images/kanketsu.png"
+                alt="完結"
+                width={300}
+                height={300}
+                className="object-contain"
+              />
+            </motion.div>
+            
+            {/* Tsukurukun character (existing code) */}
             <motion.div
               animate={expression !== "normal" ? getExpressionAnimation() : controls}
               transition={{
