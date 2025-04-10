@@ -31,10 +31,16 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "ホームページつくるくん | LINEで簡単ホームページ作成サービス",
+    description: "【最短即日】LINEでチャットするだけで簡単にホームページが作れる！初心者でも安心、低価格で高品質なホームページ制作サービス。",
+    images: ["/images/tsukurukun.png"],
+  },
   icons: {
     icon: "/images/favicon.ico",
   },
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
