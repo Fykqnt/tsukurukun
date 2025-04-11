@@ -23,12 +23,12 @@ export function FeaturesSection() {
     {
       icon: <PaintBucket className="h-10 w-10 text-green-500" />,
       title: "豊富なデザイン",
-      description: "お客様の業種やイメージに合わせた多彩な、洗練されたデザインをご用意。",
+      description: "お客様の業種やイメージに合わせた多彩な、洗練されたデザインをご用意いたします。",
     },
     {
       icon: <CreditCard className="h-10 w-10 text-green-500" />,
-      title: "低価格プラン",
-      description: "初期費用を抑えた格安プランから、本格的なサイトまで幅広く対応。",
+      title: "無料でおためし可能",
+      description: "初期費用0円のおためしからスタート。その後は価格を抑えたライトプランから、本格的なサイトまで幅広く対応できるプレミアムプランまでご選定いただけます。",
     },
     {
       icon: <Globe className="h-10 w-10 text-green-500" />,
