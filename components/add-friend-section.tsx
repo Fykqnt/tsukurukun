@@ -69,11 +69,40 @@ export function AddFriendSection() {
             LINE公式アカウントを友だち追加
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            QRコードを読み取って友だち追加いただくことで早速ご利用いただけます。
+            LINEアカウントを友だち追加いただくことで早速お試しいただけます。
           </p>
         </motion.div>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+          {/* Mobile button - fixed animation */}
+          <div className="md:hidden w-full flex justify-center mb-6">
+            <a href="https://line.me/R/ti/p/@647ahkhs" target="_blank" rel="noopener noreferrer">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <motion.div
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ 
+                    duration: 2, 
+                    repeat: Infinity,
+                    repeatType: "loop" 
+                  }}
+                >
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-[#06C755] to-[#05b24e] hover:from-[#05a648] hover:to-[#049440] text-white rounded-full px-10 py-7 text-xl font-bold shadow-lg transition-all duration-300"
+                  >
+                    LINEで友だち追加
+                    <span className="ml-2">👉</span>
+                  </Button>
+                </motion.div>
+              </motion.div>
+            </a>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
             whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -84,13 +113,15 @@ export function AddFriendSection() {
             <Card className="w-72 h-72 md:w-80 md:h-80 flex items-center justify-center shadow-xl border-green-200 overflow-hidden bg-gradient-to-br from-white to-green-50">
               <CardContent className="p-0 w-full h-full flex items-center justify-center">
                 <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
-                  <Image
-                    src="/images/line-qr.png"
-                    alt="LINE QRコード"
-                    width={250}
-                    height={250}
-                    className="object-contain"
-                  />
+                  <a href="https://line.me/R/ti/p/@647ahkhs" target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src="/images/line-qr.png"
+                      alt="LINE QRコード"
+                      width={250}
+                      height={250}
+                      className="object-contain cursor-pointer"
+                    />
+                  </a>
                 </motion.div>
               </CardContent>
 
@@ -157,22 +188,35 @@ export function AddFriendSection() {
                   つくるくんによる人生相談
                 </motion.li>
               </ul>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <a href="https://lin.ee/FKunUwt" target="_blank" rel="noopener noreferrer" className="inline-block">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-[#06C755] to-[#05b24e] hover:from-[#05a648] hover:to-[#049440] text-white rounded-full px-8 text-lg mt-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              {/* Desktop button - fixed animation */}
+              <div className="hidden md:block mt-4">
+                <a href="https://line.me/R/ti/p/@647ahkhs" target="_blank" rel="noopener noreferrer">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
                   >
-                    LINEで友だち追加
-                  </Button>
+                    <motion.div
+                      animate={{ scale: [1, 1.05, 1] }}
+                      transition={{ 
+                        duration: 2, 
+                        repeat: Infinity,
+                        repeatType: "loop" 
+                      }}
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      <Button
+                        size="lg"
+                        className="bg-gradient-to-r from-[#06C755] to-[#05b24e] hover:from-[#05a648] hover:to-[#049440] text-white rounded-full px-8 text-lg font-bold shadow-lg transition-all duration-300"
+                      >
+                        LINEで友だち追加
+                        <span className="ml-2">👉</span>
+                      </Button>
+                    </motion.div>
+                  </motion.div>
                 </a>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>

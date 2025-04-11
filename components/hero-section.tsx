@@ -5,6 +5,7 @@ import { motion, useAnimation } from "framer-motion"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowDownIcon, Sparkles } from "lucide-react"
+import { ScrollToAddFriendButton } from "@/components/scroll-to-add-friend-button"
 
 // 表情の種類を定義
 type TsukurukunExpression = "normal" | "pain" | "crying"
@@ -717,18 +718,7 @@ export function HeroSection() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="mt-4 mb-8 relative z-50"
           >
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-600 hover:to-green-500 text-white rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-              onClick={() => {
-                const addFriendSection = document.getElementById("add-friend-section")
-                if (addFriendSection) {
-                  addFriendSection.scrollIntoView({ behavior: "smooth" })
-                }
-              }}
-            >
-              LINEで友だち追加する <ArrowDownIcon className="ml-2 h-5 w-5" />
-            </Button>
+            <ScrollToAddFriendButton className="mt-6" />
           </motion.div>
           
           {/* SEO content */}
