@@ -4,6 +4,7 @@ import { Noto_Sans_JP } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/header"
+import Image from "next/image"
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -55,6 +56,16 @@ export default function RootLayout({
       <body className={`${notoSansJP.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Header />
+          <div className="w-full relative">
+            <Image
+              src="/images/tsukurukun.png"
+              alt="ホームページつくるくん"
+              width={1200}
+              height={630}
+              priority
+              className="w-full h-auto max-h-[500px] object-cover"
+            />
+          </div>
           {children}
         </ThemeProvider>
       </body>
