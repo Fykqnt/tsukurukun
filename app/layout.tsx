@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       "【最短即日】LINEでチャットするだけで簡単にホームページが作れる！初心者でも安心、低価格で高品質なホームページ制作サービス。",
     images: [
       {
-        url: "/images/tsukurukun.png",
+        url: "/images/tsukurukun-transparent.png",
         width: 1200,
         height: 630,
         alt: "ホームページつくるくん",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ホームページつくるくん | LINEで簡単ホームページ作成サービス",
     description: "【最短即日】LINEでチャットするだけで簡単にホームページが作れる！初心者でも安心、低価格で高品質なホームページ制作サービス。",
-    images: ["/images/tsukurukun.png"],
+    images: ["/images/tsukurukun-transparent.png"],
   },
   icons: {
     icon: "/images/favicon.ico",
