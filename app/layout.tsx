@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       "【最短即日】LINEでチャットするだけで簡単にホームページが作れる！初心者でも安心、低価格で高品質なホームページ制作サービス。",
     images: [
       {
-        url: "/images/ogp-image.jpg",
+        url: "/images/tsukurukun.png",
         width: 1200,
         height: 630,
         alt: "ホームページつくるくん",
@@ -56,16 +56,7 @@ export default function RootLayout({
       <body className={`${notoSansJP.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Header />
-          <div className="w-full relative">
-            <Image
-              src="/images/tsukurukun.png"
-              alt="ホームページつくるくん"
-              width={1200}
-              height={630}
-              priority
-              className="w-full h-auto max-h-[500px] object-cover"
-            />
-          </div>
+          
           {children}
         </ThemeProvider>
       </body>
