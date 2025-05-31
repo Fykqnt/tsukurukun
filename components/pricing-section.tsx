@@ -349,11 +349,11 @@ export const PricingSection = () => {
             </div>
             <div className="mb-6">
               <p className="text-gray-600">月額料金</p>
-              <p className="text-3xl font-bold">¥9,800<span className="text-base">/月</span></p>
+              <p className="text-3xl font-bold">¥3,980<span className="text-base">/月</span></p>
             </div>
             <div className="mb-8">
               <p className="text-gray-600">年間一括払い</p>
-              <p className="text-3xl font-bold">¥58,000<span className="text-base">/年</span></p>
+              <p className="text-3xl font-bold">¥38,000<span className="text-base">/年</span></p>
               <p className="text-green-600 font-semibold">約50%おトク</p>
             </div>
           </div>
@@ -370,12 +370,12 @@ export const PricingSection = () => {
             </div>
             <div className="mb-6">
               <p className="text-gray-200">月額料金</p>
-              <p className="text-3xl font-bold">¥19,800<span className="text-base">/月</span></p>
+              <p className="text-3xl font-bold">¥9,800<span className="text-base">/月</span></p>
             </div>
             <div className="mb-8">
               <p className="text-gray-200">年間一括払い</p>
               <p className="text-3xl font-bold">¥98,000<span className="text-base">/年</span></p>
-              <p className="text-green-300 font-semibold">約60%おトク</p>
+              <p className="text-green-300 font-semibold">約40%おトク</p>
             </div>
           </div>
         </div>
