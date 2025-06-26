@@ -99,7 +99,7 @@ const CustomersSection = () => {
                     ))}
                   </div>
                   <div className="text-sm text-green-600 font-semibold">
-                    制作期間: {testimonial.completionTime}
+                    納品までの時間: {testimonial.completionTime}
                   </div>
                 </div>
                 
