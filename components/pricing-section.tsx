@@ -239,7 +239,7 @@ export const PricingSection = () => {
                     </li>
                     <li className="flex items-center">
                       <span className="text-green-300 mr-2">✓</span>
-                      月2回まで修正対応
+                      月3回まで修正対応
                     </li>
                     <li className="flex items-center">
                       <span className="text-green-300 mr-2">✓</span>
