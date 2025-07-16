@@ -52,7 +52,7 @@ export default function TransactionLawPage() {
               </tr>
               <tr className="divide-x">
                 <th className="px-4 py-3 text-left font-medium text-gray-700 bg-gray-50">解約について</th>
-                <td className="px-4 py-3">お客様の都合でいつでも解約いただけます。なお、本サービスの利用可能期間の途中で解約いただいても、既にお支払いいただいた利用料金は、日割、月割精算等による返金を含めた一切の返金をおこないません。予めご了承願います。</td>
+                <td className="px-4 py-3">本サービスは最低1年の契約です。お客様の都合でいつでも解約いただけますが、本サービスの利用可能期間の途中で解約いただいても、既にお支払いいただいた利用料金は、日割、月割精算等による返金を含めた一切の返金をおこないません。予めご了承願います。</td>
               </tr>
               <tr className="divide-x">
                 <th className="px-4 py-3 text-left font-medium text-gray-700 bg-gray-50">動作環境</th>

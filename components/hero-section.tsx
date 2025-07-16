@@ -477,7 +477,7 @@ export function HeroSection() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto">
-              【業界最速】LINEで完結するホームページ作成サービス
+              【PC作業一切不要】LINEで完結するホームページ作成サービス
             </p>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
               初心者でも安心！チャットするだけで高品質なウェブサイトが最短即日完成
@@ -498,15 +498,15 @@ export function HeroSection() {
               animate={saisokuControls}
             >
               <Image
-                src="/images/saisoku.png"
-                alt="最速"
+                src="/images/sagyouhuyo.png"
+                alt="作業不要"
                 width={75}
                 height={75}
                 className="object-contain md:hidden"
               />
               <Image
-                src="/images/saisoku.png"
-                alt="最速"
+                src="/images/sagyouhuyo.png"
+                alt="作業不要"
                 width={300}
                 height={300}
                 className="object-contain hidden md:block"
