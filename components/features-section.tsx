@@ -8,7 +8,7 @@ export function FeaturesSection() {
     {
       icon: <Zap className="h-10 w-10 text-green-500" />,
       title: "最短即日納品",
-      description: "業界最速で、急ぎのホームページ制作にも対応。LINEでのやり取りで素早く完成します。",
+      description: "PC作業一切不要！急ぎのホームページ制作にも対応。LINEでのやり取りで素早く完成します。",
     },
     {
       icon: <Smartphone className="h-10 w-10 text-green-500" />,

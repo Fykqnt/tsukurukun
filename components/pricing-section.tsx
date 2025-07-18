@@ -210,7 +210,7 @@ export const PricingSection = () => {
                   <div className="text-2xl text-green-200">+</div>
                   <div className="mt-4">
                     <p className="text-green-200 text-lg">月額料金</p>
-                    <p className="text-4xl font-bold">¥2,980<span className="text-xl">/月</span></p>
+                    <p className="text-4xl font-bold">¥4,980<span className="text-xl">/月</span></p>
                   </div>
                 </div>
 
