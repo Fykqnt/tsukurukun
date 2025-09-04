@@ -53,7 +53,7 @@ export function Footer() {
               </motion.li>
               <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}>
                 <Link
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdKm3_Vncf5GIDX1k9ofwXvVwMtZbx-9tBWLmwxlPU21LWR2Q/viewform?usp=header"
+                  href="/inquiries"
                   className="text-gray-600 hover:text-green-600 hover:underline flex items-center"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block mr-2"></span>
